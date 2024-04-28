@@ -17,7 +17,7 @@ Installing Violentmonkey Extension
 2. Click on the Violentmonkey icon in your browser's toolbar.
 3. Select the option to open Violentmonkey's dashboard.
 4. Click on the "New script" button to create a new script.
-5. Copy and paste the contents of the script.js file into the script editor.
+5. Copy and paste the contents of the [script.js](script.js) file into the script editor.
 6. Click the "Save" button to save the script.
 
 ## Activating the Script

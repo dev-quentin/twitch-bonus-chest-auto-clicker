@@ -9,29 +9,15 @@
 // ==/UserScript==
 
 const TIME = 1000;
-const SELECTOR = 'path[d="M2 6v11h16V6a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3Zm10-1H8v2h4V5Zm2 0v2h2V6a1 1 0 0 0-1-1h-1ZM4 9v6h12V9H4Zm1-4h1v2H4V6a1 1 0 0 1 1-1Z"]';
-
-function getParent(node) {
-  return node.parentNode ?? null;
-}
+const SELECTOR = 'path[d="M6 3a4 4 0 0 0-4 4v14h20V7a4 4 0 0 0-4-4H6Zm1 2H6a2 2 0 0 0-2 2v1h3V5Zm2 0v3h6V5H9Zm11 5v9H4v-9h16Zm-3-5v3h3V7a2 2 0 0 0-2-2h-1Z"]';
 
 setInterval(() => {
-  let domNode = document.querySelector(SELECTOR);
-
-  if (!domNode) {
+  const button = document.querySelector(SELECTOR)?.closest("button");
+  if (!button) {
     return;
   }
 
-  while (domNode.nodeName != "BUTTON") {
-    domNode = getParent(domNode);
-    if (domNode === null) {
-      break;
-    }
-  }
-
-  if (domNode) {
-    setTimeout(() => {
-      domNode.click();
-    }, Math.floor(Math.random() * 3) + 1);
-  }
+  setTimeout(() => {
+    button.click();
+  }, Math.floor(Math.random() * 700) + 300);
 }, TIME);
